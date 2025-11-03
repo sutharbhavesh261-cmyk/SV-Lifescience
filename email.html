@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SV Life Sciences - Trusted Wholesale Pharmacy Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap">
+    <style>
+        :root {
+            --primary-blue: #1a4f8b;
+            --secondary-blue: #3a7bc8;
+            --light-blue: #e6f0fa;
+            --dark-gray: #333;
+            --medium-gray: #666;
+            --light-gray: #f5f7fa;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-blue);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-blue);
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-blue);
+        }
+
+        /* Image Slider Section */
+        .image-slider-section {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .image-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .image-slide.active {
+            opacity: 1;
+        }
+
+        .image-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .slider-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--white);
+            z-index: 2;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .slider-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .slider-content p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-blue);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        .slider-nav-dots {
+            display: flex;
+            gap: 12px;
+        }
+
+        .slider-nav-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-nav-dot.active {
+            background-color: var(--white);
+            transform: scale(1.3);
+        }
+
+        .slider-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+            z-index: 3;
+            transform: translateY(-50%);
+        }
+
+        .slider-arrow {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .slider-arrow:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-blue);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .about-image img:hover {
+            transform: scale(1.03);
+        }
+
+        .mission-vision {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .mission, .vision {
+            flex: 1;
+            background: var(--light-blue);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .mission:hover, .vision:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Product Categories Section */
+        .product-categories {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .category-card p {
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+
+        /* Partners Section */
+        .partners-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .owner-bio {
+            flex: 1;
+            background: var(--light-blue);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .owner-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .owner-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .partners-list {
+            flex: 1;
+        }
+
+        .partner-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .partner-logo {
+            width: 120px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* Branches Section */
+        .branches-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .branches-list {
+            flex: 1;
+        }
+
+        .branch-card {
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .branch-card:hover {
+            background: var(--light-blue);
+            transform: translateX(5px);
+        }
+
+        .branch-map {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .branch-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-blue);
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 2px rgba(58, 123, 200, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            background: var(--light-blue);
+            padding: 18px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--secondary-blue);
+            color: var(--white);
+        }
+
+        .faq-answer {
+            padding: 20px;
+            background: var(--white);
+            display: none;
+        }
+
+        .faq-active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Buttons */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+            height: 52px;
+        }
+        .whatsapp-float img {
+            width: 32px;
+            height: 32px;
+        }
+        .telphone_icon-bottom {
+            position: fixed;
+            right: 23px;
+            bottom: 80px;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;    
+        }
+        .telphone_icon-bottom img {
+            width: 30px;
+            height: 26px;
+            margin-bottom: -5px;
+        }
+        
+        /* Form Messages */
+        .form-message {
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+        
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content, .mission-vision, .partners-container, 
+            .branches-container, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-image, .branch-map {
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: var(--white);
+                width: 80%;
+                height: calc(100vh - 80px);
+                flex-direction: column;
+                padding: 40px 20px;
+                box-shadow: var(--shadow);
+                transition: 0.3s;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .slider-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .slider-content p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .categories-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .image-slider-section {
+                height: 500px;
+            }
+            
+            .slider-arrows {
+                padding: 0 15px;
+            }
+            
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="C:\Users\sutha\python\logo2.jpeg" alt="SV Life Sciences Logo">
+                <div class="logo-text"></div>
+            </div>
+            
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#branches">Branches</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Image Slider Section -->
+    <section class="image-slider-section" id="home">
+        <div class="image-slider">
+            <div class="image-slide active" style="background-image: url('https://plus.unsplash.com/premium_photo-1670981099554-618ea1e93bf0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1286');">
+                <div class="slider-content">
+                    <h2>S.V. Lifescience</h2>
+                    <p>A Humble Healthcare company</p>
+                    <a href="#about" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="image-slide" style="background-image: url('https://images.unsplash.com/photo-1631549916768-4119b2e5f926?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1179');">
+                <div class="slider-content">
+                    <h2>Trusted by Healthcare Professionals</h2>
+                    <p>Over a decade of excellence in pharmaceutical distribution</p>
+                    <a href="#categories" class="btn">Browse Products</a>
+                </div>
+            </div>
+            <div class="image-slide" style="background-image: url('https://images.unsplash.com/photo-1585435557343-3b092031a831?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170');">
+                <div class="slider-content">
+                    <h2>Quality Pharmaceutical Solutions</h2>
+                    <p>Your trusted partner for healthcare products and medical supplies</p>
+                    <a href="#partners" class="btn">View more</a>
+                </div>
+            </div>
+          >
+            </div>
+        </div>
+        
+        <div class="slider-arrows">
+            <div class="slider-arrow prev-arrow">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="slider-arrow next-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+        
+        <div class="slider-nav">
+            <div class="slider-nav-dots">
+                <div class="slider-nav-dot active" data-index="0"></div>
+                <div class="slider-nav-dot" data-index="1"></div>
+                <div class="slider-nav-dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>SV Lifescience, established in 2017 and fully operational since 2025, is an Indian pharmaceutical company dedicated to delivering affordable, high-quality medicines. We strive to bring health, hope, and healing through innovation, integrity, and trust.</p>
+                    <p>SV Lifescience stands for trust and transparency in every formulation we create. Manufacturing through WHO-GMP certified facilities ensures world-class quality standards, while 100% Indian expertise drives local innovation with a global outlook.</p>
+                    
+                    <div class="mission-vision">
+                        <div class="mission">
+                            <h3>💫 Mission</h3>
+                            <p>Our mission is to deliver reliable, affordable, and effective healthcare solutions that empower wellbeing and improve quality of life. We are committed to excellence in pharmaceutical innovation, ethical business practices, and customer satisfaction — guided by compassion, integrity, and trust.</p>
+                        </div>
+                        <div class="vision">
+                            <h3>🌿 Vision</h3>
+                            <p>To become a trusted global healthcare partner by making high-quality, affordable medicines accessible to everyone.We envision a healthier world driven by innovation, integrity, and compassion where every life is valued and every treatment brings hope and healing.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="C:\Users\sutha\python\bg.png" alt="SV Life Sciences Pharmacy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section id="categories" class="product-categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Product Categories</h2>
+                <p>Explore our wide range of pharmaceutical products and medical supplies</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>Antibiotics</h3>
+                    <p>Broad-spectrum antibiotics for various bacterial infections</p>
+                    <a href="product.html" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">View product</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tablets"></i>
+                    </div>
+                    <h3>OTC Medicines</h3>
+                    <p>Over-the-counter medications for common ailments</p>
+                    <a href="product.html" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">View product</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Medical Devices</h3>
+                    <p>Diagnostic equipment and medical monitoring devices</p>
+                    <a href="product.html" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">View product</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <h3>Surgical Supplies</h3>
+                    <p>Sterile surgical instruments and consumables</p>
+                    <a href="product.html" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">View product</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-capsules"></i>
+                    </div>
+                    <h3>Vitamins & Supplements</h3>
+                    <p>Nutritional supplements and vitamin formulations</p>
+                    <a href="product.html" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">View product</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="product.html" class="btn">
+                    <i class="fas fa-th-large"></i> View All Products
+                </a>
+                 <a href="c:\Users\sutha\OneDrive\Documents\med\python\Company Details-PDF.pdf" class="btn" target="_blank" style="margin-left: 15px;">
+                    <i class="fas fa-download"></i> Download Full Catalog
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner & Partners Section -->
+    <section id="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>Owner</h2>
+            </div>
+            
+            <div class="partners-container">
+                <div class="owner-bio">
+                    <div class="owner-image">
+                        <img src="https://i.postimg.cc/ZqFRJ2Nj/image-2.png" alt="Narayan Lal">
+                    </div>
+                    <h3>Narayan Lal</h3>
+                    <p>Founder and CEO of SV Life Sciences</p>
+                    <p>Under his leadership, SV Life Sciences has grown to become a trusted partner for healthcare providers across the region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section id="branches" style="background-color: #f9fbfd;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Branches</h2>
+            </div>
+            
+            <div class="branches-container">
+                <div class="branches-list">
+                    <div class="branch-card">
+                        <h3>CORPORATE OFFICE</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> S B Ind. Est., Gala No. 4, Navghar, Vasai (E), Mumbai, 401210</p>
+                        <p><i class="fas fa-phone"></i> +91 8696267108</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 10:00 AM - 6:00 PM, Sat: 9:00 AM - 2:00 PM</p>
+                    </div>
+                    <div class="branch-card">
+                        <h3>REGIONAL OFFICE</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Main Dhani Road, Khudala, Falna , Dist-Pali ( Rajsthan ) 306116 </p>
+                        <p><i class="fas fa-phone"></i> +91 8696267108</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 10:00 AM - 6:00 PM, Sat: 9:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="branch-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2283.8783870592174!2d73.2439395728777!3d25.233833777687323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3942904749cc2a31%3A0x3d91ca3da7afaf7d!2sS.V.%20LIFE%20SCIENCE!5e1!3m2!1sen!2sin!4v1761376580383!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p>+91 8696267108</p>
+                                <p>+91 8619902589</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p>svlifescience17@gmail.com</p>
+                                <p>sutharnl22@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p>S B Ind. Est., Gala No. 4, Navghar, Vasai (E)</p>
+                                <p>Mumbai, 401210</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/8696267108" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp" style="margin-right: 10px; font-size: 1.2rem;"></i> Chat on WhatsApp
+                    </a>
+                </div>
+                
+                <div class="contact-form">
+                    <div id="formMessage" class="form-message"></div>
+                    <!-- Form with Formspree Integration -->
+                    <form id="inquiryForm" action="https://formspree.io/f/xanprajw" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="background-color: #f9fbfd;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is the minimum order requirement?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The minimum order value is $500 for wholesale purchases. For first-time customers, we offer a reduced minimum of $300.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What areas do you deliver to?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We deliver to all major cities and towns within the state. For orders above $1000, we offer free delivery. Outside our regular delivery zone, additional charges may apply.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept bank transfers, credit cards, and digital payments. Terms of payment can be discussed for established customers with large orders.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I verify your license?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our pharmacy license number is WH-PH-2022-08765. You can verify it with the State Pharmacy Board through their online verification system or by contacting them directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>SV Life Sciences</h3>
+                    <p>Trusted wholesale pharmacy solutions for healthcare providers. Quality products, reliable service, and competitive pricing.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/17TUvMGy4Y/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f" ></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#categories">Products</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#branches">Branches</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Product Categories</h3>
+                    <ul>
+                        <li><a href="#categories">Antibiotics</a></li>
+                        <li><a href="#categories">OTC Medicines</a></li>
+                        <li><a href="#categories">Medical Devices</a></li>
+                        <li><a href="#categories">Surgical Supplies</a></li>
+                        <li><a href="#categories">Vitamins & Supplements</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Legal & Compliance</h3>
+                    <ul>
+                        <li><a href="#">Pharmacy License: WH-PH-2022-08765</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Quality Assurance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 SV Life Sciences. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Buttons -->
+    <a href="https://wa.me/+918696267108?text=Hi" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat">
+    </a>
+    <a target="_blank" href="tel:8696267108" class="telphone_icon-bottom">
+        <img src="https://img.icons8.com/color/48/000000/phone--v1.png" alt="Call Us" class="img-fluid">
+    </a>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-bars');
+                this.querySelector('i').classList.toggle('fa-times');
+            });
+        }
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('faq-active');
+            });
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Close mobile menu if open
+                    if(navMenu && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileToggle.querySelector('i').classList.add('fa-bars');
+                        mobileToggle.querySelector('i').classList.remove('fa-times');
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form Submission with Formspree
+        const contactForm = document.getElementById('inquiryForm');
+        const formMessage = document.getElementById('formMessage');
+        
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Simple form validation
+                if (!name || !email || !subject || !message) {
+                    showMessage('Please fill in all required fields.', 'error');
+                    return;
+                }
+                
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // Create form data object
+                const formData = new FormData(this);
+                
+                // Send form data to Formspree
+                fetch(this.action, {
+                    method: this.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        showMessage('Thank you for your inquiry! We will contact you shortly at svlifescience17@gmail.com.', 'success');
+                        contactForm.reset();
+                    } else {
+                        response.json().then(data => {
+                            if (data.error) {
+                                showMessage(data.error, 'error');
+                            } else {
+                                showMessage('Oops! There was a problem submitting your form. Please try again.', 'error');
+                            }
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showMessage('Oops! There was a problem submitting your form. Please try again.', 'error');
+                })
+                .finally(() => {
+                    // Reset button state
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+            });
+        }
+        
+        // Function to show form messages
+        function showMessage(message, type) {
+            if (formMessage) {
+                formMessage.textContent = message;
+                formMessage.className = 'form-message ' + type;
+                formMessage.style.display = 'block';
+                
+                // Hide message after 5 seconds
+                setTimeout(function() {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+        }
+        
+        // Animation on Scroll
+        function checkScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+        
+        // Initialize animations
+        document.querySelectorAll('.product-card, .mission, .vision, .branch-card, .category-card')
+            .forEach(el => el.classList.add('fade-in'));
+            
+        // Image Slider Functionality
+        const imageSlides = document.querySelectorAll('.image-slide');
+        const imageDots = document.querySelectorAll('.slider-nav-dot');
+        const prevArrow = document.querySelector('.prev-arrow');
+        const nextArrow = document.querySelector('.next-arrow');
+        let currentImageSlide = 0;
+        let imageSlideInterval;
+        
+        function showImageSlide(n) {
+            // Hide all slides
+            imageSlides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Remove active class from all dots
+            imageDots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show the selected slide
+            currentImageSlide = (n + imageSlides.length) % imageSlides.length;
+            imageSlides[currentImageSlide].classList.add('active');
+            imageDots[currentImageSlide].classList.add('active');
+        }
+        
+        function nextImageSlide() {
+            showImageSlide(currentImageSlide + 1);
+        }
+        
+        function prevImageSlide() {
+            showImageSlide(currentImageSlide - 1);
+        }
+        
+        // Set up automatic sliding
+        function startImageSlider() {
+            imageSlideInterval = setInterval(nextImageSlide, 5000); // Change slide every 5 seconds
+        }
+        
+        // Pause slider when hovering over it
+        const imageSliderSection = document.querySelector('.image-slider-section');
+        if (imageSliderSection) {
+            imageSliderSection.addEventListener('mouseenter', () => {
+                clearInterval(imageSlideInterval);
+            });
+            
+            imageSliderSection.addEventListener('mouseleave', () => {
+                startImageSlider();
+            });
+        }
+        
+        // Add click event to dots
+        imageDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-index'));
+                showImageSlide(slideIndex);
+                clearInterval(imageSlideInterval);
+                startImageSlider();
+            });
+        });
+        
+        // Add click event to arrows
+        if (prevArrow) {
+            prevArrow.addEventListener('click', function() {
+                prevImageSlide();
+                clearInterval(imageSlideInterval);
+                startImageSlider();
+            });
+        }
+        
+        if (nextArrow) {
+            nextArrow.addEventListener('click', function() {
+                nextImageSlide();
+                clearInterval(imageSlideInterval);
+                startImageSlider();
+            });
+        }
+        
+        // Initialize image slider
+        if (imageSlides.length > 0) {
+            startImageSlider();
+        }
+    </script>
+</body>
+</html>
